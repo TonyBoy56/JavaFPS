@@ -3,12 +3,27 @@ package com.mime.javafps;
 import java.awt.Canvas;
 import javax.swing.JFrame;
 
-public class Display extends Canvas {
+public class Display extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 	
 	public static final int WIDTH = 800;
 	public static final int HEIGHT = 600;
 	public static final String TITLE = "JavaFPS Pre-Alpha 0.01";
+	
+	private Thread thread;
+	private boolean running = false;
+	
+	private void start() {
+		if (running) {
+			return;
+		}
+		running = true;
+		thread = new Thread(this);
+	}
+	
+	public void run() {
+		
+	}
 	
 //	main is needed to run the program
 //	main will produce a fixed-frame
