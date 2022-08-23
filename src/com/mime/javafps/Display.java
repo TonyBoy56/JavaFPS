@@ -21,6 +21,19 @@ public class Display extends Canvas implements Runnable {
 		thread = new Thread(this);
 	}
 	
+	private void stop() {
+		if (!running) {
+			return;
+		}
+		running = false;
+		try {
+			thread.join();
+		} catch (Exception e){
+			e.printStackTrace();
+			System.exit(0);
+		}
+	}
+	
 	public void run() {
 		
 	}
