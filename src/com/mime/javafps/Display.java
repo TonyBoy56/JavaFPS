@@ -1,7 +1,9 @@
 package com.mime.javafps;
 
+import com.mime.javafps.graphics.Render;
 import java.awt.Canvas;
 import javax.swing.JFrame;
+
 
 public class Display extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
@@ -12,6 +14,7 @@ public class Display extends Canvas implements Runnable {
 
 	private Thread thread;
 	private boolean running = false;
+	private Render render;
 
 	private void start() {
 		if (running) {
