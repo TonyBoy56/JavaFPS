@@ -15,6 +15,10 @@ public class Display extends Canvas implements Runnable {
 	private Thread thread;
 	private boolean running = false;
 	private Render render;
+	
+	public Display() {
+		render = new Render(WIDTH, HEIGHT);
+	}
 
 	private void start() {
 		if (running) {
